@@ -1,0 +1,24 @@
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+exports.id = "vendor-chunks/abs-svg-path";
+exports.ids = ["vendor-chunks/abs-svg-path"];
+exports.modules = {
+
+/***/ "(ssr)/./node_modules/abs-svg-path/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/abs-svg-path/index.js ***!
+  \********************************************/
+/***/ ((module) => {
+
+eval("\nmodule.exports = absolutize\n\n/**\n * redefine `path` with absolute coordinates\n *\n * @param {Array} path\n * @return {Array}\n */\n\nfunction absolutize(path){\n\tvar startX = 0\n\tvar startY = 0\n\tvar x = 0\n\tvar y = 0\n\n\treturn path.map(function(seg){\n\t\tseg = seg.slice()\n\t\tvar type = seg[0]\n\t\tvar command = type.toUpperCase()\n\n\t\t// is relative\n\t\tif (type != command) {\n\t\t\tseg[0] = command\n\t\t\tswitch (type) {\n\t\t\t\tcase 'a':\n\t\t\t\t\tseg[6] += x\n\t\t\t\t\tseg[7] += y\n\t\t\t\t\tbreak\n\t\t\t\tcase 'v':\n\t\t\t\t\tseg[1] += y\n\t\t\t\t\tbreak\n\t\t\t\tcase 'h':\n\t\t\t\t\tseg[1] += x\n\t\t\t\t\tbreak\n\t\t\t\tdefault:\n\t\t\t\t\tfor (var i = 1; i < seg.length;) {\n\t\t\t\t\t\tseg[i++] += x\n\t\t\t\t\t\tseg[i++] += y\n\t\t\t\t\t}\n\t\t\t}\n\t\t}\n\n\t\t// update cursor state\n\t\tswitch (command) {\n\t\t\tcase 'Z':\n\t\t\t\tx = startX\n\t\t\t\ty = startY\n\t\t\t\tbreak\n\t\t\tcase 'H':\n\t\t\t\tx = seg[1]\n\t\t\t\tbreak\n\t\t\tcase 'V':\n\t\t\t\ty = seg[1]\n\t\t\t\tbreak\n\t\t\tcase 'M':\n\t\t\t\tx = startX = seg[1]\n\t\t\t\ty = startY = seg[2]\n\t\t\t\tbreak\n\t\t\tdefault:\n\t\t\t\tx = seg[seg.length - 2]\n\t\t\t\ty = seg[seg.length - 1]\n\t\t}\n\n\t\treturn seg\n\t})\n}\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKHNzcikvLi9ub2RlX21vZHVsZXMvYWJzLXN2Zy1wYXRoL2luZGV4LmpzIiwibWFwcGluZ3MiOiI7QUFDQTs7QUFFQTtBQUNBO0FBQ0E7QUFDQSxXQUFXLE9BQU87QUFDbEIsWUFBWTtBQUNaOztBQUVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBRUE7QUFDQTtBQUNBO0FBQ0E7O0FBRUE7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0EscUJBQXFCLGVBQWU7QUFDcEM7QUFDQTtBQUNBO0FBQ0E7QUFDQTs7QUFFQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBOztBQUVBO0FBQ0EsRUFBRTtBQUNGIiwic291cmNlcyI6WyIvVXNlcnMvemltaW4vd2ViRGV2L3F1aWNraW52b2ljZS9ub2RlX21vZHVsZXMvYWJzLXN2Zy1wYXRoL2luZGV4LmpzIl0sInNvdXJjZXNDb250ZW50IjpbIlxubW9kdWxlLmV4cG9ydHMgPSBhYnNvbHV0aXplXG5cbi8qKlxuICogcmVkZWZpbmUgYHBhdGhgIHdpdGggYWJzb2x1dGUgY29vcmRpbmF0ZXNcbiAqXG4gKiBAcGFyYW0ge0FycmF5fSBwYXRoXG4gKiBAcmV0dXJuIHtBcnJheX1cbiAqL1xuXG5mdW5jdGlvbiBhYnNvbHV0aXplKHBhdGgpe1xuXHR2YXIgc3RhcnRYID0gMFxuXHR2YXIgc3RhcnRZID0gMFxuXHR2YXIgeCA9IDBcblx0dmFyIHkgPSAwXG5cblx0cmV0dXJuIHBhdGgubWFwKGZ1bmN0aW9uKHNlZyl7XG5cdFx0c2VnID0gc2VnLnNsaWNlKClcblx0XHR2YXIgdHlwZSA9IHNlZ1swXVxuXHRcdHZhciBjb21tYW5kID0gdHlwZS50b1VwcGVyQ2FzZSgpXG5cblx0XHQvLyBpcyByZWxhdGl2ZVxuXHRcdGlmICh0eXBlICE9IGNvbW1hbmQpIHtcblx0XHRcdHNlZ1swXSA9IGNvbW1hbmRcblx0XHRcdHN3aXRjaCAodHlwZSkge1xuXHRcdFx0XHRjYXNlICdhJzpcblx0XHRcdFx0XHRzZWdbNl0gKz0geFxuXHRcdFx0XHRcdHNlZ1s3XSArPSB5XG5cdFx0XHRcdFx0YnJlYWtcblx0XHRcdFx0Y2FzZSAndic6XG5cdFx0XHRcdFx0c2VnWzFdICs9IHlcblx0XHRcdFx0XHRicmVha1xuXHRcdFx0XHRjYXNlICdoJzpcblx0XHRcdFx0XHRzZWdbMV0gKz0geFxuXHRcdFx0XHRcdGJyZWFrXG5cdFx0XHRcdGRlZmF1bHQ6XG5cdFx0XHRcdFx0Zm9yICh2YXIgaSA9IDE7IGkgPCBzZWcubGVuZ3RoOykge1xuXHRcdFx0XHRcdFx0c2VnW2krK10gKz0geFxuXHRcdFx0XHRcdFx0c2VnW2krK10gKz0geVxuXHRcdFx0XHRcdH1cblx0XHRcdH1cblx0XHR9XG5cblx0XHQvLyB1cGRhdGUgY3Vyc29yIHN0YXRlXG5cdFx0c3dpdGNoIChjb21tYW5kKSB7XG5cdFx0XHRjYXNlICdaJzpcblx0XHRcdFx0eCA9IHN0YXJ0WFxuXHRcdFx0XHR5ID0gc3RhcnRZXG5cdFx0XHRcdGJyZWFrXG5cdFx0XHRjYXNlICdIJzpcblx0XHRcdFx0eCA9IHNlZ1sxXVxuXHRcdFx0XHRicmVha1xuXHRcdFx0Y2FzZSAnVic6XG5cdFx0XHRcdHkgPSBzZWdbMV1cblx0XHRcdFx0YnJlYWtcblx0XHRcdGNhc2UgJ00nOlxuXHRcdFx0XHR4ID0gc3RhcnRYID0gc2VnWzFdXG5cdFx0XHRcdHkgPSBzdGFydFkgPSBzZWdbMl1cblx0XHRcdFx0YnJlYWtcblx0XHRcdGRlZmF1bHQ6XG5cdFx0XHRcdHggPSBzZWdbc2VnLmxlbmd0aCAtIDJdXG5cdFx0XHRcdHkgPSBzZWdbc2VnLmxlbmd0aCAtIDFdXG5cdFx0fVxuXG5cdFx0cmV0dXJuIHNlZ1xuXHR9KVxufVxuIl0sIm5hbWVzIjpbXSwiaWdub3JlTGlzdCI6WzBdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(ssr)/./node_modules/abs-svg-path/index.js\n");
+
+/***/ })
+
+};
+;
