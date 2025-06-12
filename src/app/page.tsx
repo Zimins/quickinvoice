@@ -4,7 +4,7 @@ import { CustomerForm } from '@/components/CustomerForm';
 import { ProjectForm } from '@/components/ProjectForm';
 import { QuoteItemList } from '@/components/QuoteItemList';
 import { BankInfoForm } from '@/components/BankInfoForm';
-import { QuotePDFGenerator } from '@/components/PDFGeneratorKorean';
+import { QuotePDFGenerator } from '@/components/PDFGeneratorStylePreview';
 import { useQuoteStore } from '@/store/useQuoteStore';
 import { RotateCcw, TestTube } from 'lucide-react';
 
@@ -26,6 +26,7 @@ export default function Home() {
       projectName: '쇼핑몰 웹사이트 개발',
       quoteDate: new Date(),
       validUntil: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000), // 30일 후
+      deliveryDate: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000), // 90일 후
       projectDuration: '3개월',
     });
 
@@ -90,6 +91,7 @@ export default function Home() {
       projectName: '쇼핑몰 웹사이트 개발',
       quoteDate: new Date(),
       validUntil: new Date(Date.now() + 30 * 24 * 60 * 60 * 1000),
+      deliveryDate: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
       projectDuration: '3개월',
     });
 
