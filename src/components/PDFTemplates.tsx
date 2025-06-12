@@ -10,7 +10,7 @@ interface PDFTemplateProps {
 }
 
 export const PDFTemplate: React.FC<PDFTemplateProps> = ({ quote, companyInfo, style }) => {
-  const styles = pdfStyles[style];
+  const styles = pdfStyles[style] as any;
 
   const formatDate = (date: Date) => {
     return new Date(date).toLocaleDateString('ko-KR');

@@ -396,10 +396,9 @@ export const pdfStyles = {
     },
     infoLabel: {
       width: 100,
-      fontSize: 9,
+      fontSize: 8,
       color: '#64748B',
       textTransform: 'uppercase',
-      fontSize: 8,
     },
     infoValue: {
       flex: 1,
